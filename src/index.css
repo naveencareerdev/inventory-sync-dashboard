@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #14181f;
+  --color-ink-soft: #2b303b;
+  --color-canvas: #eef1f4;
+  --color-surface: #ffffff;
+  --color-line: #d9dee5;
+  --color-amber: #e8a33d;
+  --color-amber-soft: #fbeed9;
+  --color-teal: #2f8f6f;
+  --color-teal-soft: #e1f2ec;
+  --color-rust: #c4432e;
+  --color-rust-soft: #fbe4df;
+  --color-denim: #3a5a8c;
+  --color-denim-soft: #e4ebf4;
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+/* subtle scrollbar, kept quiet on purpose */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 999px;
+}
+
+@keyframes dash-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-dash-in {
+  animation: dash-in 0.35s ease-out both;
+}

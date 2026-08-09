@@ -1,0 +1,14 @@
+node_modules
+.npm-cache
+dist
+dist-ssr
+*.local
+vite.config.js.timestamp-*.mjs
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# OS
+.DS_Store
