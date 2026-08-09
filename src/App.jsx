@@ -112,7 +112,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-canvas">
+    <div className="app-shell">
       <Header lastSyncAt={lastSyncAt} />
       <NavTabs active={activeTab} onChange={setActiveTab} alertCount={alertCount} />
 
@@ -147,7 +147,7 @@ export default function App() {
       </main>
 
       <footer className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-        <p className="text-xs text-ink-soft/40">
+        <p className="text-xs font-medium text-ink-soft/45">
           StockManifest — demo data only, all vendor and store names are fictional.
         </p>
       </footer>

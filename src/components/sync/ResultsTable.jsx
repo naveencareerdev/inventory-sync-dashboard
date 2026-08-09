@@ -10,13 +10,13 @@ export default function ResultsTable({ rows, onDownloadStore, onDownloadAll }) {
   if (!rows.length) return null
 
   return (
-    <div className="mt-6 rounded-md border border-line bg-surface">
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line p-3">
+    <div className="panel-card mt-6 overflow-hidden rounded-2xl border border-white bg-surface/90">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line/70 p-3.5">
         <div className="flex flex-wrap items-center gap-1.5">
           <button
             onClick={() => setFilter('all')}
             className={`rounded-[3px] border px-2 py-1 font-mono text-[11px] font-semibold ${
-              filter === 'all' ? 'border-ink bg-ink text-canvas' : 'border-line text-ink-soft/60'
+              filter === 'all' ? 'border-ink bg-ink text-white shadow-sm' : 'border-line bg-white text-ink-soft/60 hover:border-denim/30'
             }`}
           >
             ALL
@@ -31,14 +31,14 @@ export default function ResultsTable({ rows, onDownloadStore, onDownloadAll }) {
           {filter !== 'all' && (
             <button
               onClick={() => onDownloadStore(filter)}
-              className="rounded-sm border border-line px-2.5 py-1 text-xs font-medium text-ink hover:border-denim/40"
+              className="rounded-lg border border-line bg-white px-2.5 py-1.5 text-xs font-semibold text-ink transition-colors hover:border-denim/40"
             >
               Download {filter}.csv
             </button>
           )}
           <button
             onClick={onDownloadAll}
-            className="rounded-sm bg-ink px-2.5 py-1 text-xs font-medium text-canvas hover:bg-ink-soft"
+            className="rounded-lg bg-ink px-2.5 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-denim"
           >
             Download all (.zip)
           </button>
@@ -48,7 +48,7 @@ export default function ResultsTable({ rows, onDownloadStore, onDownloadAll }) {
       <div className="max-h-[420px] overflow-auto">
         <table className="w-full border-collapse text-left text-sm">
           <thead className="sticky top-0 bg-surface">
-            <tr className="text-[11px] uppercase tracking-wider text-ink-soft/50">
+            <tr className="bg-indigo-50/55 text-[10px] font-bold uppercase tracking-[0.12em] text-ink-soft/55">
               <th className="border-b border-line px-3 py-2 font-medium">Store</th>
               <th className="border-b border-line px-3 py-2 font-medium">SKU</th>
               <th className="border-b border-line px-3 py-2 font-medium">Title</th>

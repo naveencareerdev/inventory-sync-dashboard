@@ -1,24 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #14181f;
-  --color-ink-soft: #2b303b;
-  --color-canvas: #eef1f4;
+  --color-ink: #18224a;
+  --color-ink-soft: #53607f;
+  --color-canvas: #f7f7ff;
   --color-surface: #ffffff;
-  --color-line: #d9dee5;
-  --color-amber: #e8a33d;
-  --color-amber-soft: #fbeed9;
-  --color-teal: #2f8f6f;
-  --color-teal-soft: #e1f2ec;
-  --color-rust: #c4432e;
-  --color-rust-soft: #fbe4df;
-  --color-denim: #3a5a8c;
-  --color-denim-soft: #e4ebf4;
+  --color-line: #e6e7f5;
+  --color-amber: #f59e0b;
+  --color-amber-soft: #fff3d6;
+  --color-teal: #0fa98d;
+  --color-teal-soft: #ddf8f0;
+  --color-rust: #ec5b75;
+  --color-rust-soft: #ffe5eb;
+  --color-denim: #6366f1;
+  --color-denim-soft: #e9e9ff;
 
-  --font-display: "Space Grotesk", sans-serif;
-  --font-sans: "Inter", sans-serif;
-  --font-mono: "IBM Plex Mono", monospace;
+  --font-display: "Outfit", sans-serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --font-mono: "DM Mono", monospace;
 }
 
 html {
@@ -27,9 +27,57 @@ html {
 
 body {
   margin: 0;
-  background-color: var(--color-canvas);
+  min-width: 320px;
+  background:
+    radial-gradient(circle at 4% 3%, rgb(196 181 253 / 52%), transparent 23rem),
+    radial-gradient(circle at 94% 8%, rgb(251 146 160 / 30%), transparent 25rem),
+    radial-gradient(circle at 78% 92%, rgb(94 234 212 / 28%), transparent 27rem),
+    var(--color-canvas);
+  background-attachment: fixed;
   color: var(--color-ink);
   font-family: var(--font-sans);
+}
+
+::selection {
+  background: #c7d2fe;
+  color: #18224a;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background: linear-gradient(180deg, rgb(255 255 255 / 42%), transparent 28rem);
+}
+
+.glass-header {
+  background: rgb(255 255 255 / 72%);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 1px 0 rgb(255 255 255 / 72%);
+}
+
+.nav-glass {
+  background: rgb(255 255 255 / 48%);
+  backdrop-filter: blur(14px);
+}
+
+.panel-card {
+  box-shadow: 0 14px 38px rgb(66 55 150 / 7%);
+}
+
+.floating-orb {
+  position: relative;
+  isolation: isolate;
+}
+
+.floating-orb::after {
+  position: absolute;
+  z-index: -1;
+  top: -0.45rem;
+  right: -0.35rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 9999px;
+  background: #fbbf24;
+  content: '';
 }
 
 /* subtle scrollbar, kept quiet on purpose */
@@ -41,7 +89,7 @@ body {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-line);
+  background: #c7c9e8;
   border-radius: 999px;
 }
 
@@ -56,5 +104,5 @@ body {
   }
 }
 .animate-dash-in {
-  animation: dash-in 0.35s ease-out both;
+  animation: dash-in 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
 }

@@ -13,20 +13,20 @@ export default function AuditView({ log, onClear }) {
   return (
     <div className="animate-dash-in space-y-3">
       <div className="flex items-center justify-between">
-        <p className="text-xs text-ink-soft/50">
+        <p className="text-xs font-medium text-ink-soft/55">
           {log.length} sync run{log.length === 1 ? '' : 's'} recorded — stored locally in this browser.
         </p>
         <button
           onClick={onClear}
-          className="rounded-sm border border-line px-2.5 py-1 text-xs font-medium text-ink-soft/60 hover:border-rust/40 hover:text-rust"
+          className="rounded-lg border border-line bg-white/75 px-2.5 py-1.5 text-xs font-semibold text-ink-soft/60 shadow-sm transition-colors hover:border-rust/40 hover:text-rust"
         >
           Clear log
         </button>
       </div>
-      <div className="overflow-hidden rounded-md border border-line bg-surface">
+      <div className="panel-card overflow-hidden rounded-2xl border border-white bg-surface/90">
         <table className="w-full border-collapse text-left text-sm">
           <thead>
-            <tr className="text-[11px] uppercase tracking-wider text-ink-soft/50">
+            <tr className="bg-indigo-50/55 text-[10px] font-bold uppercase tracking-[0.12em] text-ink-soft/55">
               <th className="border-b border-line px-3 py-2 font-medium">Time</th>
               <th className="border-b border-line px-3 py-2 font-medium">Vendors</th>
               <th className="border-b border-line px-3 py-2 font-medium">Stores</th>

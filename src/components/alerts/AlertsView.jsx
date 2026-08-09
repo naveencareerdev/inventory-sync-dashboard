@@ -17,10 +17,10 @@ export default function AlertsView({ rows, threshold, onThresholdChange }) {
 
   return (
     <div className="animate-dash-in space-y-4">
-      <div className="flex flex-wrap items-center justify-between gap-4 rounded-md border border-line bg-surface p-4">
+      <div className="panel-card flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-white bg-surface/90 p-5">
         <div>
-          <h2 className="font-display text-sm font-semibold text-ink">Low-stock threshold</h2>
-          <p className="text-xs text-ink-soft/50">Items at or below this many units on hand are flagged.</p>
+          <h2 className="font-display text-base font-bold text-ink">Low-stock threshold</h2>
+          <p className="mt-0.5 text-xs text-ink-soft/55">Items at or below this many units on hand are flagged.</p>
         </div>
         <div className="flex items-center gap-3">
           <input
@@ -31,20 +31,20 @@ export default function AlertsView({ rows, threshold, onThresholdChange }) {
             onChange={(e) => onThresholdChange(Number(e.target.value))}
             className="w-40 accent-denim"
           />
-          <span className="w-10 text-right font-mono text-sm font-semibold text-ink">{threshold}</span>
+          <span className="w-10 rounded-lg bg-denim-soft py-1 text-center font-mono text-sm font-semibold text-denim">{threshold}</span>
         </div>
       </div>
 
       {lowStock.length === 0 ? (
-        <div className="rounded-md border border-teal/30 bg-teal-soft/40 p-6 text-center">
+        <div className="panel-card rounded-2xl border border-teal/25 bg-teal-soft/70 p-6 text-center">
           <p className="font-display text-sm font-semibold text-teal">All clear</p>
           <p className="mt-1 text-xs text-ink-soft/60">No items are at or below {threshold} units.</p>
         </div>
       ) : (
-        <div className="overflow-hidden rounded-md border border-line bg-surface">
+        <div className="panel-card overflow-hidden rounded-2xl border border-white bg-surface/90">
           <table className="w-full border-collapse text-left text-sm">
             <thead>
-              <tr className="text-[11px] uppercase tracking-wider text-ink-soft/50">
+              <tr className="bg-indigo-50/55 text-[10px] font-bold uppercase tracking-[0.12em] text-ink-soft/55">
                 <th className="border-b border-line px-3 py-2 font-medium">Severity</th>
                 <th className="border-b border-line px-3 py-2 font-medium">Store</th>
                 <th className="border-b border-line px-3 py-2 font-medium">SKU</th>

@@ -15,10 +15,10 @@ export default function StoreTag({ code, name, status = 'idle', compact = false 
   const c = STATUS[status] || STATUS.idle
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded-[3px] border ${c.border} bg-surface px-2 py-[3px] leading-none`}
+      className={`inline-flex items-center gap-1.5 rounded-lg border ${c.border} bg-surface/85 px-2 py-1 leading-none shadow-sm`}
     >
       <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${c.dot}`} aria-hidden="true" />
-      <span className="font-mono text-[11px] font-semibold tracking-wide text-ink">{code}</span>
+      <span className="font-mono text-[10px] font-semibold tracking-wide text-ink">{code}</span>
       {!compact && name && <span className="font-sans text-[11px] text-ink-soft/60">{name}</span>}
     </span>
   )

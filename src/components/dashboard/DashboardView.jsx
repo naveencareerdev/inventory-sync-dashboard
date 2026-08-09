@@ -123,23 +123,23 @@ export default function DashboardView({ stats, auditLog, threshold }) {
       </div>
 
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-        <div className="rounded-md border border-line bg-surface p-4 lg:col-span-2">
-          <h3 className="font-display text-sm font-semibold text-ink">Inventory by store</h3>
+        <div className="panel-card rounded-2xl border border-white bg-surface/90 p-5 lg:col-span-2">
+          <h3 className="font-display text-base font-bold text-ink">Inventory by store</h3>
           <div className="mt-3 h-64">
             <Bar data={byStoreData} options={barOptions} />
           </div>
         </div>
-        <div className="rounded-md border border-line bg-surface p-4">
-          <h3 className="font-display text-sm font-semibold text-ink">Match status</h3>
+        <div className="panel-card rounded-2xl border border-white bg-surface/90 p-5">
+          <h3 className="font-display text-base font-bold text-ink">Match status</h3>
           <div className="mt-3 flex h-64 items-center justify-center">
             <Doughnut data={matchData} options={doughnutOptions} />
           </div>
         </div>
       </div>
 
-      <div className="rounded-md border border-line bg-surface p-4">
-        <h3 className="font-display text-sm font-semibold text-ink">Sync history</h3>
-        <p className="text-xs text-ink-soft/50">
+      <div className="panel-card rounded-2xl border border-white bg-surface/90 p-5">
+        <h3 className="font-display text-base font-bold text-ink">Sync history</h3>
+        <p className="mt-0.5 text-xs text-ink-soft/55">
           Items processed per run, most recent {historyData.labels.length || 0} syncs.
         </p>
         <div className="mt-3 h-56">

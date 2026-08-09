@@ -20,10 +20,11 @@ export default function SyncPanel({
 }) {
   return (
     <div className="animate-dash-in">
-      <div className="flex flex-col gap-3 rounded-md border border-dashed border-line bg-surface p-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="panel-card relative overflow-hidden rounded-2xl border border-white bg-gradient-to-br from-indigo-600 via-violet-600 to-fuchsia-600 p-5 text-white sm:flex sm:items-center sm:justify-between">
+        <div className="pointer-events-none absolute -right-8 -top-10 h-32 w-32 rounded-full bg-amber/30 blur-2xl" />
         <div>
-          <div className="font-display text-sm font-semibold text-ink">New here?</div>
-          <p className="mt-0.5 text-xs text-ink-soft/60">
+          <div className="font-display text-base font-bold">Ready to see it work?</div>
+          <p className="mt-1 max-w-2xl text-xs font-medium leading-relaxed text-white/80">
             Load bundled sample data — three vendor feeds and six store exports — to see a full sync run
             instantly, no files needed.
           </p>
@@ -31,15 +32,15 @@ export default function SyncPanel({
         <button
           onClick={onLoadSample}
           disabled={loadingSample}
-          className="shrink-0 rounded-sm border border-denim/40 bg-denim-soft px-3 py-2 text-xs font-semibold text-denim disabled:opacity-50"
+          className="relative shrink-0 rounded-xl bg-white px-3.5 py-2.5 text-xs font-bold text-denim shadow-lg shadow-indigo-950/20 transition-transform hover:-translate-y-0.5 disabled:opacity-50"
         >
           {loadingSample ? 'Loading sample data…' : 'Load sample data'}
         </button>
       </div>
 
       <section className="mt-6">
-        <h2 className="font-display text-sm font-semibold text-ink">1. Vendor stock feeds</h2>
-        <p className="mt-0.5 text-xs text-ink-soft/50">
+        <h2 className="font-display text-base font-bold text-ink">1. Vendor stock feeds</h2>
+        <p className="mt-1 text-xs leading-relaxed text-ink-soft/60">
           Each vendor ships CSVs in their own format — the sync engine maps every vendor's columns to a
           common schema before matching.
         </p>
@@ -58,8 +59,8 @@ export default function SyncPanel({
       </section>
 
       <section className="mt-6">
-        <h2 className="font-display text-sm font-semibold text-ink">2. Store exports</h2>
-        <p className="mt-0.5 text-xs text-ink-soft/50">
+        <h2 className="font-display text-base font-bold text-ink">2. Store exports</h2>
+        <p className="mt-1 text-xs leading-relaxed text-ink-soft/60">
           Current on-hand counts per storefront, as exported from the storefront platform.
         </p>
         <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
@@ -79,13 +80,13 @@ export default function SyncPanel({
         <button
           onClick={onRunSync}
           disabled={!canSync || isSyncing}
-          className="rounded-sm bg-ink px-4 py-2.5 text-sm font-semibold text-canvas transition-opacity hover:opacity-90 disabled:opacity-40"
+          className="rounded-xl bg-gradient-to-r from-denim to-violet-600 px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-indigo-500/25 transition-all hover:-translate-y-0.5 hover:shadow-xl disabled:opacity-40"
         >
           {isSyncing ? 'Syncing…' : '⚡ Run Sync'}
         </button>
         <button
           onClick={onReset}
-          className="rounded-sm border border-line px-4 py-2.5 text-sm font-medium text-ink-soft/70 hover:border-rust/40 hover:text-rust"
+          className="rounded-xl border border-white bg-white/70 px-4 py-2.5 text-sm font-semibold text-ink-soft/70 shadow-sm transition-colors hover:border-rust/30 hover:text-rust"
         >
           Clear files
         </button>
